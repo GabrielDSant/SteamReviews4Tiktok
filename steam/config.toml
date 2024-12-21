@@ -1,0 +1,56 @@
+[settings]
+allow_nsfw = true
+theme = "dark"
+times_to_run = 2
+opacity = 0.9
+resolution_w = 1080
+resolution_h = 1920
+channel_name = "Acredita Nisso"
+storymode = false
+storymodemethod = 1
+storymode_max_length = 1000
+zoom = 1.2
+
+[ai]
+ai_similarity_enabled = false
+ai_similarity_keywords = ""
+
+[settings.tts]
+voice_choice = "tiktok"
+tiktok_voice = "br_005"
+random_voice = false
+tiktok_sessionid = "debc785d684a1a896be307b14731e7c7"
+elevenlabs_voice_name = "Bella"
+elevenlabs_api_key = ""
+aws_polly_voice = "Matthew"
+streamlabs_polly_voice = "Matthew"
+python_voice = "1"
+py_voice_num = "2"
+silence_duration = 0.3
+no_emojis = false
+
+[settings.background]
+background_video = "minecraft"
+background_audio = "lofi"
+background_audio_volume = 0.15
+enable_extra_audio = false
+background_thumbnail = false
+background_thumbnail_font_family = "arial"
+background_thumbnail_font_size = 96
+background_thumbnail_font_color = "255,255,255"
+
+[reddit.creds]
+client_id = "Ul2ZEmaefCVcywgz_2u1lA"
+client_secret = "5q_UHHuZGIIfPg17ILWPc9kwtIPSPw"
+username = "sant_4nn4"
+password = "LUCASdias2@"
+2fa = false
+
+[reddit.thread]
+subreddit = "desabafos"
+max_comment_length = 500
+min_comments = 20
+post_lang = "pt"
+random = false
+post_id = ""
+min_comment_length = 1
