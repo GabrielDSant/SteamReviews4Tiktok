@@ -5,7 +5,8 @@ set -e
 cd /steam
 pip install -r requirements.txt
 pip install translators
-apt install ./google-chrome.deb -y
+
+bash /steam/download-chrome.sh -y
 
 if [ ! -L "/usr/local/bin/chromedriver" ]; then
     ln -s /steam/chrome/chromedriver/chromedriver /usr/local/bin/chromedriver
