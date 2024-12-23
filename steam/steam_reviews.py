@@ -32,7 +32,7 @@ def download_funny_steam_reviews(app_id, thread_title):
         print("Launching Headless Browser")
         browser = p.chromium.launch(headless=True)  # Set to False to see the browser
         page = browser.new_page()
-        page.set_viewport_size({"width": 1280, "height": 800})
+        page.set_viewport_size({"width": 414, "height": 896})
 
         page.goto(f"https://store.steampowered.com/app/{app_id}/")
         page.wait_for_load_state()
@@ -41,11 +41,13 @@ def download_funny_steam_reviews(app_id, thread_title):
         if page.locator('#ageYear').is_visible():
             page.select_option('#ageYear', '1990')
             page.click('text="View Page"')
+            time.sleep(5)
 
         page.evaluate('window.scrollTo(0, document.body.scrollHeight)')
         page.evaluate('document.querySelector("#review_context_funny").click();')
         page.evaluate('ShowFilteredReviews()')
         time.sleep(5)
+        # page.screenshot(path=f"./steam_page.png")
         page.evaluate('window.scrollTo(0, document.body.scrollHeight)')
         # display_as_dropdown.click()
         # print("waiti g for funyny to load")
@@ -64,7 +66,7 @@ def download_funny_steam_reviews(app_id, thread_title):
         #         break
         #     previous_height = new_height
         review_elements = page.locator("#Reviews_funny .review_box").all()
-        review_elements = review_elements[:10]
+        review_elements = review_elements[:15]
 
         for idx, element in enumerate(review_elements):
             if "partial" in element.get_attribute("class"):

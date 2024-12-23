@@ -1,7 +1,9 @@
 from moviepy.editor import *
 import random,os
 import PIL
+from pathlib import Path
 import time
+import shutil
 
 resolution = (1080,1920)
 
@@ -46,7 +48,10 @@ def render(data, appid, game_name):
     final = CompositeVideoClip([background, image_clips]).set_audio(sound_clips)
 
     # Save video
-    os.mkdir(f'/resultados/steam/{game_name}')
-    final.write_videofile(f"/resultados/steam/{game_name}/{appid}.mp4", fps=24, threads=8, preset='ultrafast', audio_codec='aac', remove_temp=True)
+    Path(f'/resultados/steam').mkdir(parents=True, exist_ok=True)
 
+    final.write_videofile(f"/resultados/steam/{game_name}.mp4", fps=24, threads=8, preset='ultrafast', audio_codec='aac', remove_temp=True)
+
+    # Remove the assets folder after rendering the video
+    shutil.rmtree(path)
     return True

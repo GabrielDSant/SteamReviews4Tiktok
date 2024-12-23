@@ -61,13 +61,13 @@ def main():
     # generating audio 
     
     intro = {
-        "thread_id": "570",
+        "thread_id": appid,
         "thread_title": game_name,
         "intro": True,
         "comments": [{
             "comment_body": game_name,
             "screenshot_path": f"/steam/assets/{appid}/intro.png",
-            "thread_id": "570",
+            "thread_id": appid,
             "thread_title": "steam"
         }
         ]

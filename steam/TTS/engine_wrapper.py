@@ -10,7 +10,6 @@ from moviepy.audio.fx.volumex import volumex
 from moviepy.editor import AudioFileClip
 from rich.progress import track
 
-from utils import settings
 from utils.console import print_step, print_substep
 from utils.voice import sanitize_text
 
@@ -71,7 +70,7 @@ class TTSEngine:
         print_step("Saving Text to MP3 files...")
 
         self.add_periods()
-        self.call_tts("intro", process_text(self.reddit_object["thread_title"]))
+        # self.call_tts("intro.mp3", process_text(self.reddit_object["thread_title"]))
         # processed_text = ##self.reddit_object["thread_post"] != ""
         idx = 0
 

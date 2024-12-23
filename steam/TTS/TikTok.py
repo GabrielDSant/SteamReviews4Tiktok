@@ -3,6 +3,7 @@ import base64
 import random
 import time
 from typing import Final, Optional
+import os
 
 import requests
 
@@ -83,7 +84,7 @@ class TikTok:
         headers = {
             "User-Agent": "com.zhiliaoapp.musically/2022600030 (Linux; U; Android 7.1.2; es_ES; SM-G988N; "
             "Build/NRD90M;tt-ok/3.12.13.1)",
-            "Cookie": f"sessionid=bd4091addfe182c0dc9846339a2c8f9c",
+            "Cookie": f"sessionid={os.getenv('TIKTOK_SESSION_ID')}",
         }
 
         self.URI_BASE = "https://api16-normal-c-useast1a.tiktokv.com/media/api/text/speech/invoke/"

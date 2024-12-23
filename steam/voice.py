@@ -2,22 +2,17 @@ import os
 import time
 from mutagen.mp3 import MP3
 from TTS.engine_wrapper import TTSEngine
-from TTS.GTTS import GTTS
-from TTS.aws_polly import AWSPolly
-from TTS.streamlabs_polly import StreamlabsPolly
 from TTS.TikTok import TikTok
-from TTS.pyttsx import pyttsx
-from TTS.elevenlabs import elevenlabs
 import traceback
 
 # Mapeamento de provedores TTS
 TTSProviders = {
-    "GoogleTranslate": GTTS,
-    "AWSPolly": AWSPolly,
-    "StreamlabsPolly": StreamlabsPolly,
+    # "GoogleTranslate": GTTS,
+    # "AWSPolly": AWSPolly,
+    # "StreamlabsPolly": StreamlabsPolly,
     "TikTok": TikTok,
-    "pyttsx": pyttsx,
-    "ElevenLabs": elevenlabs,
+    # "pyttsx": pyttsx,
+    # "ElevenLabs": elevenlabs,
 }
 
 # Função para calcular o comprimento do arquivo MP3
@@ -35,12 +30,11 @@ def makeTTS(dict):
     # Configuração do provedor de TTS
     voice = "TikTok"
     try:
-        # print(dict['thread_id'])
         text_to_mp3 = TTSEngine(TTSProviders[voice], dict, path=f"/steam/assets/{dict['thread_id']}")
         # Gerar o áudio
         text_to_mp3.run()
     except Exception as e:
         error_message = traceback.format_exc()  # Extrai o traceback completo como uma string
-        raise Exception(f"Erro na some_function: {e}\nDetalhes do erro:\n{error_message}")
+        raise Exception(f"Erro (nessa parte normalmente é porque o session_id do tiktok está invalido mude a env TIKTOK_SESSION): {e}\nDetalhes do erro:\n{error_message}")
     # Retornar o comprimento do áudio
     return 1
