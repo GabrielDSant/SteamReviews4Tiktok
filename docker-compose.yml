@@ -7,9 +7,3 @@ services:
     volumes:
       - ./steam:/steam
       - ./resultados:/resultados
-    environment:
-      - REDDIT_CLIENT_ID=Ul2ZEmaefCVcywgz_2u1lA
-      - REDDIT_CLIENT_SECRET=5q_UHHuZGIIfPg17ILWPc9kwtIPSPw
-      - REDDIT_USERNAME=sant_4nn4
-      - REDDIT_PASSWORD=LUCASdias2@
-
