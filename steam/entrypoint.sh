@@ -12,7 +12,7 @@ playwright install
 
 bash /steam/install.sh -y
 
-export TIKTOK_SESSION_ID="f8ce3c9691bbcc3282ded83860f83099"
+export TIKTOK_SESSION_ID="9a752ad968c9468c1ac12d502825f48c"
 
 cd /tiktok_upload
 pip install hatch

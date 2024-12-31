@@ -756,7 +756,7 @@ def _post_video(driver) -> None:
         driver.execute_script(
             "arguments[0].scrollIntoView({block: 'center', inline: 'nearest'});", post
         )
-        post.click()
+        driver.execute_script('document.querySelector(".TUXButton--primary").click()')
     except ElementClickInterceptedException:
         logger.debug(green("Trying to click on the button again"))
         driver.execute_script('document.querySelector(".TUXButton--primary").click()')
